@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "extract-contact-information"
+authors = [
+    {name = "Jeremie Barhabazi", email = "jbarh086@uottawa.ca"}
+]
+maintainers = [
+    {name = "Jeremie Barhabazi", email = "jbarh086@uottawa.ca"}
+]
+description = "A command-line tool that extracts email address and phone numbers from a web page."
+version = "0.1.0"
+dependencies = [
+    "click>=8.5"
+]
+requires-python = ">= 3.11"
+
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff"
+]
+
+[tool.ruff]
+# Set the maximum line length to 79.
+line-length = 79
+
+[tool.ruff.lint]
+# Add the `line-too-long` rule to the enforced rule set. By default, Ruff omits rules that
+# overlap with the use of a formatter, like Black, but we can override this behavior by
+# explicitly adding the rule.
+extend-select = ["E501"]
