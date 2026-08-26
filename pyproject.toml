@@ -22,11 +22,31 @@ requires-python = ">= 3.11"
 [project.optional-dependencies]
 dev = [
     "pytest",
+    "pytest-cov",
     "ruff"
 ]
 
 [tool.pytest.ini_options]
-addopts = "-v -ra --strict-markers"
+addopts = "--cov=src --cov-report=term-missing --cov-report=html"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["src"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true
+fail_under = 80
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError"
+]
+
+[tool.coverage.html]
+directory = "htmlcov"
+
 
 [tool.ruff]
 # Set the maximum line length to 79.

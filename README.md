@@ -26,20 +26,20 @@ The tool would analyze the page and produce an output file containing the contac
 
 By completing this project, you should practice:
 
-* Building a Python CLI application
-* Working with command-line arguments
-* Making HTTP requests
-* Processing HTML documents
-* Extracting text from web pages
-* Using regular expressions
-* Validating and normalizing extracted data
-* Handling errors gracefully
-* Reading and writing files
-* Organizing a Python project into modules
-* Writing unit tests
-* Using logging
-* Managing dependencies with a virtual environment
-* Packaging a Python CLI application
+- Building a Python CLI application
+- Working with command-line arguments
+- Making HTTP requests
+- Processing HTML documents
+- Extracting text from web pages
+- Using regular expressions
+- Validating and normalizing extracted data
+- Handling errors gracefully
+- Reading and writing files
+- Organizing a Python project into modules
+- Writing unit tests
+- Using logging
+- Managing dependencies with a virtual environment
+- Packaging a Python CLI application
 
 ---
 
@@ -65,12 +65,12 @@ The application should make an HTTP request to the supplied URL.
 
 It should handle common problems such as:
 
-* Invalid URLs
-* DNS failures
-* Connection failures
-* HTTP errors
-* Timeouts
-* Pages that cannot be accessed
+- Invalid URLs
+- DNS failures
+- Connection failures
+- HTTP errors
+- Timeouts
+- Pages that cannot be accessed
 
 The program should provide a useful error message instead of crashing with an unhandled exception.
 
@@ -190,16 +190,16 @@ Start with the simplest possible CLI and add functionality incrementally.
 
 Your application should eventually consider cases such as:
 
-* The page contains no contact information
-* The same contact appears multiple times
-* The page contains malformed HTML
-* The URL redirects to another page
-* The server returns an error
-* The server takes too long to respond
-* The page contains a very large amount of text
-* Email addresses appear inside HTML attributes
-* Phone numbers appear in different formats
-* The page uses a different character encoding
+- The page contains no contact information
+- The same contact appears multiple times
+- The page contains malformed HTML
+- The URL redirects to another page
+- The server returns an error
+- The server takes too long to respond
+- The page contains a very large amount of text
+- Email addresses appear inside HTML attributes
+- Phone numbers appear in different formats
+- The page uses a different character encoding
 
 ---
 
@@ -256,12 +256,12 @@ Support:
 
 Add structured logging for events such as:
 
-* URL requested
-* HTTP status
-* Number of emails found
-* Number of phone numbers found
-* Output file created
-* Errors
+- URL requested
+- HTTP status
+- Number of emails found
+- Number of phone numbers found
+- Output file created
+- Errors
 
 ---
 
