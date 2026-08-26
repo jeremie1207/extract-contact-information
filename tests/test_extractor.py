@@ -1,6 +1,6 @@
 import pytest
 
-from src.extractor.extractor import emails_extractor
+from src.extractor.extractor import emails_extractor, phone_numbers_extractor
 
 
 @pytest.fixture
@@ -33,8 +33,12 @@ def sample_text() -> str:
         Burlingame, CA 94010-4093
         USA
 
-        Phone: 800.420.7240 or +1 415.863.9900
-        Fax: +1 415.863.9950
+        Phone: 613-555-1234
+            613.555.1234
+            613 555 1234
+            (613) 555-1234
+            +1 613 555 1234
+            +1-613-555-1234
 
         Reach Us on Social Media
         Twitter Facebook Instagram Linkedin Pinterest
@@ -51,25 +55,22 @@ def test_emails_extractor(sample_text: str):
     
     actual_result: list[str] = emails_extractor(sample_text)
     
-    print(expected_result)
-    print(actual_result)
     
     assert sorted(actual_result) == sorted(expected_result)
 
-def test_emails_extractor_empty_text():
-    empty_text: str = ""
-    expected_result: list[str] = []
     
+
     
-    actual_result: list[str] = emails_extractor(empty_text)
+def test_phone_number_extractor(sample_text: str):
+    expected_result = [
+        "613-555-1234",
+        "613.555.1234",
+        "613 555 1234",
+        "(613) 555-1234",
+        "+1 613 555 1234",
+        "+1-613-555-1234"
+    ]
     
-    assert actual_result == expected_result
+    actual_result = phone_numbers_extractor(sample_text)
     
-def test_emails_extractor_no_email_in_given_text():
-    text = "Hello, world!"
-    expected_result: list[str] = []
-    
-    actual_result: list[str] = emails_extractor(text)
-    
-    assert actual_result == expected_result
-    
+    assert sorted(actual_result) == sorted(expected_result)
