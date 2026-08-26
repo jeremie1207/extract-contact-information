@@ -25,6 +25,9 @@ dev = [
     "ruff"
 ]
 
+[tool.pytest.ini_options]
+addopts = "-v -ra --strict-markers"
+
 [tool.ruff]
 # Set the maximum line length to 79.
 line-length = 79
