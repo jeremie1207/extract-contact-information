@@ -59,7 +59,9 @@ def test_emails_extractor(sample_text: str):
     assert sorted(actual_result) == sorted(expected_result)
 
     
-
+def test_emails_extractor_error():
+    with pytest.raises(TypeError, match=r"text should be a string"):
+        emails_extractor(1)
     
 def test_phone_number_extractor(sample_text: str):
     expected_result = [
@@ -74,3 +76,7 @@ def test_phone_number_extractor(sample_text: str):
     actual_result = phone_numbers_extractor(sample_text)
     
     assert sorted(actual_result) == sorted(expected_result)
+    
+def test_phone_number_extractor_error():
+    with pytest.raises(TypeError, match=r"text should be a string"):
+        phone_numbers_extractor(1)
