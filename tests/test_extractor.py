@@ -46,7 +46,7 @@ def sample_text() -> str:
 
 
 
-def test_emails_extractor(sample_text: str):
+def test_emails_extractor(sample_text: str) -> None:
     expected_result: list[str] = ['info@nostarch.com', 'sales@nostarch.com', 
                                 'academic@nostarch.com', 
                                 'conferences@nostarch.com', 
@@ -59,11 +59,11 @@ def test_emails_extractor(sample_text: str):
     assert sorted(actual_result) == sorted(expected_result)
 
     
-def test_emails_extractor_error():
+def test_emails_extractor_error() -> None:
     with pytest.raises(TypeError, match=r"text should be a string"):
-        emails_extractor(1)
+        emails_extractor(1) # type: ignore[arg-type]
     
-def test_phone_number_extractor(sample_text: str):
+def test_phone_number_extractor(sample_text: str) -> None:
     expected_result = [
         "613-555-1234",
         "613.555.1234",
@@ -77,6 +77,6 @@ def test_phone_number_extractor(sample_text: str):
     
     assert sorted(actual_result) == sorted(expected_result)
     
-def test_phone_number_extractor_error():
+def test_phone_number_extractor_error() -> None:
     with pytest.raises(TypeError, match=r"text should be a string"):
-        phone_numbers_extractor(1)
+        phone_numbers_extractor(1) # type: ignore[arg-type]

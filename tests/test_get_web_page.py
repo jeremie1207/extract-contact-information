@@ -5,7 +5,7 @@ from pytest_mock import MockerFixture
 from src.get_web_page.get_web_page import get_web_page
 
 
-def test_get_web_page(mocker : MockerFixture):
+def test_get_web_page(mocker : MockerFixture) -> None:
     mock_requests_get = mocker.patch(
         "src.get_web_page.get_web_page.requests.get"
     )
@@ -24,7 +24,7 @@ def test_get_web_page(mocker : MockerFixture):
     
     assert results == expect_text
     
-def test_get_web_page_error(mocker : MockerFixture):
+def test_get_web_page_error(mocker : MockerFixture) -> None:
     mock_requests_get = mocker.patch(
         "src.get_web_page.get_web_page.requests.get"
     )
@@ -43,4 +43,3 @@ def test_get_web_page_error(mocker : MockerFixture):
     
     with pytest.raises(requests.exceptions.RequestException):
         get_web_page(url)
-   

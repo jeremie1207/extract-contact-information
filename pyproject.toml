@@ -17,7 +17,7 @@ dependencies = [
     "click>=8", 
     "requests>=2.34.0"
 ]
-requires-python = ">= 3.11"
+requires-python = ">= 3.14"
 
 
 [project.optional-dependencies]
@@ -25,7 +25,8 @@ dev = [
     "pytest",
     "pytest-cov",
     "pytest-mock",
-    "ruff"
+    "ruff",
+    "mypy"
 ]
 
 [tool.pytest.ini_options]
@@ -59,3 +60,10 @@ line-length = 79
 # overlap with the use of a formatter, like Black, but we can override this behavior by
 # explicitly adding the rule.
 extend-select = ["E501"]
+
+[tool.mypy]
+# Enable strict mode, which includes several other checks
+strict = true
+# You can add other configurations here, e.g.,
+# disallow_untyped_defs = true
+# ignore_missing_imports = true
