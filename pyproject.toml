@@ -14,7 +14,7 @@ maintainers = [
 description = "A command-line tool that extracts email address and phone numbers from a web page."
 version = "0.1.0"
 dependencies = [
-    "click>=8.5"
+    "click>=8"
 ]
 requires-python = ">= 3.11"
 
