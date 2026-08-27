@@ -27,7 +27,8 @@ dev = [
     "pytest-mock",
     "ruff",
     "black",
-    "mypy"
+    "mypy",
+    "bandit"
 ]
 
 [tool.pytest.ini_options]
@@ -104,3 +105,7 @@ strict = true
 # You can add other configurations here, e.g.,
 # disallow_untyped_defs = true
 # ignore_missing_imports = true
+warn_unused_configs = true
+warn_return_any = true
+ignore_missing_imports = true
+ 
