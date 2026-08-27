@@ -109,4 +109,7 @@ strict = true
 warn_unused_configs = true
 warn_return_any = true
 ignore_missing_imports = true
+
+[tool.bandit]
+exclude_dirs = [".venv", "__pycache__", "build", "dist"]
  
