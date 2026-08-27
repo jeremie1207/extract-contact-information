@@ -22,27 +22,6 @@ The tool would analyze the page and produce an output containing the contact inf
 
 ---
 
-## 🎯 Project Goals
-
-By completing this project, you should practice:
-
-- Building a Python CLI application
-- Working with command-line arguments
-- Making HTTP requests
-- Processing HTML documents
-- Extracting text from web pages
-- Using regular expressions
-- Validating and normalizing extracted data
-- Handling errors gracefully
-- Reading and writing files
-- Organizing a Python project into modules
-- Writing unit tests
-- Using logging
-- Managing dependencies with a virtual environment
-- Packaging a Python CLI application
-
----
-
 ## ✨ Core Features
 
 ### 1. Accept a URL
