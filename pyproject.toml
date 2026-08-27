@@ -26,6 +26,7 @@ dev = [
     "pytest-cov",
     "pytest-mock",
     "ruff",
+    "black",
     "mypy"
 ]
 
@@ -52,14 +53,47 @@ directory = "htmlcov"
 
 
 [tool.ruff]
-# Set the maximum line length to 79.
-line-length = 79
+target-version= "py314"
+line-length = 88
+exclude = [
+    ".git",
+    ".venv",
+    "venv",
+    "build",
+    "dist",
+]
 
 [tool.ruff.lint]
-# Add the `line-too-long` rule to the enforced rule set. By default, Ruff omits rules that
-# overlap with the use of a formatter, like Black, but we can override this behavior by
-# explicitly adding the rule.
-extend-select = ["E501"]
+# Enable:
+# E/F = pycodestyle + Pyflakes
+# I   = import sorting
+# B   = bugbear (common Python pitfalls)
+# UP  = modernize Python code
+select = ["E", "F", "I", "B", "UP"]
+
+# Rules that are intentionally disabled
+ignore = [
+    "E501",  # Line length is handled by Black
+]
+
+[tool.ruff.lint.isort]
+# Make imports look like Black-compatible, conventional Python imports
+combine-as-imports = true
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+# Files/directories Black should ignore
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | venv
+  | build
+  | dist
+)/
+'''
 
 [tool.mypy]
 # Enable strict mode, which includes several other checks
