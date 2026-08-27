@@ -47,6 +47,9 @@ exclude_lines = [
     "if __name__ == .__main__.:",
     "raise NotImplementedError"
 ]
+omit = [
+    "src/__init__.py"
+]
 
 [tool.coverage.html]
 directory = "htmlcov"
