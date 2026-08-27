@@ -4,7 +4,7 @@ A Python command-line tool that extracts **email addresses and phone numbers fro
 
 ## 📌 Project Overview
 
-The goal of this project is to build a CLI tool that accepts a URL, downloads the corresponding web page, extracts its textual content, searches for contact information, and saves the results to an output file.
+The goal of this project is to build a CLI tool that accepts a URL, downloads the corresponding web page, extracts its textual content, searches for contact information, and saves the results to an output.
 
 The project is inspired by the classic "Phone Number and Email Address Extractor" automation project, but instead of reading text from the clipboard, this version works directly with web pages.
 
@@ -18,7 +18,7 @@ Instead of manually searching through the page, you could run:
 contact-extractor https://example.com
 ```
 
-The tool would analyze the page and produce an output file containing the contact information it discovered.
+The tool would analyze the page and produce an output containing the contact information it discovered.
 
 ---
 
@@ -117,9 +117,9 @@ The project should clearly define which formats are supported.
 
 ---
 
-### 5. Generate an output file
+### 5. Generate an output
 
-The extracted contact information should be written to an output file.
+The extracted contact information should be written to an output.
 
 For example:
 
@@ -160,7 +160,6 @@ contact-extractor <URL>
 As an extension, consider supporting options such as:
 
 ```text
---output <file>
 --emails-only
 --phones-only
 --verbose
@@ -169,99 +168,12 @@ As an extension, consider supporting options such as:
 For example:
 
 ```text
-contact-extractor https://example.com --output contacts.txt
-```
-
-Or:
-
-```text
 contact-extractor https://example.com --emails-only
 ```
-
-These options are **not required for the first version**.
 
 Start with the simplest possible CLI and add functionality incrementally.
 
 #
-
----
-
-# ⚠️ Edge Cases
-
-Your application should eventually consider cases such as:
-
-- The page contains no contact information
-- The same contact appears multiple times
-- The page contains malformed HTML
-- The URL redirects to another page
-- The server returns an error
-- The server takes too long to respond
-- The page contains a very large amount of text
-- Email addresses appear inside HTML attributes
-- Phone numbers appear in different formats
-- The page uses a different character encoding
-
----
-
-### Crawl links
-
-Instead of processing only one page, optionally follow links belonging to the same domain.
-
-For example:
-
-```text
-contact-extractor https://example.com --crawl
-```
-
-This turns the project into a small web crawler.
-
----
-
-### Robots.txt
-
-If crawling multiple pages, investigate how `robots.txt` works and design the crawler to respect the site's crawling rules.
-
----
-
-### JSON output
-
-Add an option such as:
-
-```text
---format json
-```
-
-Possible conceptual output:
-
-```text
-{
-    "emails": [...],
-    "phone_numbers": [...]
-}
-```
-
----
-
-### CSV output
-
-Support:
-
-```text
---format csv
-```
-
----
-
-### Logging
-
-Add structured logging for events such as:
-
-- URL requested
-- HTTP status
-- Number of emails found
-- Number of phone numbers found
-- Output file created
-- Errors
 
 ---
 
