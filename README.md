@@ -100,12 +100,6 @@ The project should clearly define which formats are supported.
 
 The extracted contact information should be written to an output.
 
-For example:
-
-```text
-contacts.txt
-```
-
 A possible output structure could be:
 
 ```text
@@ -155,34 +149,6 @@ Start with the simplest possible CLI and add functionality incrementally.
 #
 
 ---
-
-### Docker
-
-Create a Docker image that allows the application to be executed without manually installing its Python dependencies.
-
-Example concept:
-
-```text
-docker run contact-extractor https://example.com
-```
-
----
-
-### CI/CD
-
-Create a CI pipeline that automatically:
-
-1. Installs dependencies.
-2. Runs tests.
-3. Runs linting.
-4. Checks formatting.
-5. Builds the package.
-
-#
-
----
-
-#
 
 ## 🔒 Scope
 
