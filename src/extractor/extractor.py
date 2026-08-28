@@ -20,7 +20,7 @@ def emails_extractor(text: str) -> list[str]:
     if not isinstance(text, str):
         raise TypeError("text should be a string")
     
-    logger.info(f"Starting extraction of emails from :\n{text}")
+    logger.info("Starting extraction of emails from text")
     
     return re.findall(pattern, text)
 
@@ -37,7 +37,7 @@ def phone_numbers_extractor(text: str) -> list[str]:
         TypeError: If `text` is not a string.
     """
     
-    logger.info(f"Starting extraction of phone number from :\n{text}")
+    logger.info("Starting extraction of phone number from text")
     
     if not isinstance(text, str):
         raise TypeError("text should be a string")
